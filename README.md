@@ -107,7 +107,7 @@ Component(connect(mapStateToData)({
 ```
 ### note
 
-为了避免性能问题，被隐藏的页面不会触发setData,在页面onShow时会触发一次setData来获取到store里最新的state，所以注意请勿在页面内setData而是统一用dispatch，否则页面的隐藏和出现会导致数据变化
+为了避免性能问题，dispatch事件不会触发隐藏页面的setData,在隐藏页面onShow时会触发一次setData来获取到store里最新的state并覆盖页面data，所以注意请勿在页面内setData而是统一用dispatch，否则页面的隐藏和出现会导致数据变化
 
 ### 反馈地址
 [https://github.com/scyan/wechat-rematch/issues](https://github.com/scyan/wechat-rematch/issues)
