@@ -27,7 +27,9 @@ function createStore(config) {
       const data = mapStateToData(rootState)
       if (view.triggerChange) {
         const diffData = diff(view.data, data)
-        view.triggerChange(diffData)
+        if(Object.keys(diffData).length){
+          view.triggerChange(diffData)
+        }
       }
     })
   }

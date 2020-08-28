@@ -1,7 +1,7 @@
 {
   "name": "wechat-rematch",
   "miniprogram": "dist",
-  "version": "0.0.9",
+  "version": "0.1.2",
   "description": "rematch used in wechat",
   "main": "dist/index.js",
   "scripts": {

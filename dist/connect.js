@@ -26,7 +26,7 @@ function connect(mapStateToData = defaultMapStateToData) {
       // 每次页面显示就setData
       const data = mapStateToData(store.getState())
       // 获取有区别的数据，防止setData数据量过大
-      const diffData = (this.data, data)
+      const diffData = diff(this.data, data)
       setData(this,diffData);
       _onShow && _onShow.call(this, options)
     }
@@ -45,7 +45,7 @@ function connect(mapStateToData = defaultMapStateToData) {
       show() {
         this.dispatch = store.dispatch
         const data = mapStateToData(store.getState())
-        const diffData = (this.data, data)
+        const diffData = diff(this.data, data)
         setData(this,diffData)
         pageConfig.triggerChange = (data) => {
           setData(this,data)
@@ -71,7 +71,7 @@ function connect(mapStateToData = defaultMapStateToData) {
       ready() {
         this.dispatch = store.dispatch
         const data = mapStateToData(store.getState())
-        const diffData = (this.data, data)
+        const diffData = diff(this.data, data)
         setData(this,diffData)
         pageConfig.triggerChange = (data) => {
           setData(this,data)
